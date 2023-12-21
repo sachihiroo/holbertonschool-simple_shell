@@ -10,16 +10,18 @@
 #include <sys/stat.h>
 #include <errno.h>
 #include <fcntl.h>
+extern char **environ;
 
 char *read_line(void);
 char **tokenizer(char *line);
-
-char *_strdup(char *str);
-int _strcmp(char *s1, char *s2);
-int _strlen(char *s);
-char *_strcat(char *dest, char *src);
-char *_strcpy(char *dest, char *src);
 int _exec(char **cmd, char **argv);
 void _free(char **str);
+char *env_func(char *pol);
+char *get_path(char *command);
+
+int is_built_in(char **cmd);
+void handle_built_in(char **command, int *status);
+void hsh_exit(char **cmd, int *status);
+void hsh_env(char **cmd, int *status);
 
 #endif
