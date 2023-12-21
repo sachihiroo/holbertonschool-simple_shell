@@ -1,15 +1,15 @@
 #include "main.h"
 /**
- *
- *
- *
+ * get_path - a function that  locates the full path of an executable command.
+ * @command: name of the command.
+ * Return: Null.
  */
 char *get_path(char *command)
 {
 	char *env, *path, *cmd;
 	struct stat buffer;
 	int i;
-	
+
 	/* IF COMMAND WITH PATH EXEMPL(/bin/ls)*/
 
 	for (i = 0; command[i]; i++)
@@ -17,7 +17,7 @@ char *get_path(char *command)
 		if (command[i] == '/')
 		{
 			if (stat(command, &buffer) == 0)
-				return strdup(command);
+				return (strdup(command));
 
 			return (NULL);
 		}
@@ -49,10 +49,10 @@ char *get_path(char *command)
 		else
 		{
 			free(env);
-			return NULL;
+			return (NULL);
 		}
 	}
 
 	free(env);
-	return NULL;
+	return (NULL);
 }
