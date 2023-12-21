@@ -5,7 +5,7 @@ int main(int ac, char **argv)
 	char **cmd = NULL;
 	char *line = NULL;
 	int stat = 0;
-	int idx;
+	int idx = 0;
 	(void)ac;
 
 	while (1)
