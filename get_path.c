@@ -12,7 +12,7 @@ int is_absolute_path(const char *command)
 	for (i = 0; command[i] && command[i] != '/'; i++)
 		;
 
-	return command[i] == '/';
+	return (command[i] == '/';)
 }
 
 /**
