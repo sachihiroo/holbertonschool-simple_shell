@@ -3,9 +3,9 @@
 int _exec(char **cmd, char **argv, int idx)
 
 {
-	char *full_cmd;
 	pid_t child;
 	int stat;
+	char *full_cmd;
 
 	full_cmd = get_path(cmd[0]);
 	if (!full_cmd)
@@ -26,8 +26,7 @@ int _exec(char **cmd, char **argv, int idx)
 	else
 	{
 		waitpid(child, &stat, 0);
-		if (strcmp(cmd[0], full_cmd) != 0)
-			free(full_cmd), full_cmd = NULL;
+		free(full_cmd), full_cmd = NULL;
 		_free(cmd);
 	}
 	return (WEXITSTATUS(stat));
