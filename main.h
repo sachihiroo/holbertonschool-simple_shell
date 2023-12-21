@@ -14,7 +14,7 @@ extern char **environ;
 
 char *read_line(void);
 char **tokenizer(char *line);
-int _exec(char **cmd, char **argv);
+int _exec(char **cmd, char **argv, int idx);
 void _free(char **str);
 char *env_func(char *pol);
 char *get_path(char *command);
