@@ -30,7 +30,7 @@ char *get_full_path(char *command)
 
 	env = env_func("PATH");
 	if (!env)
-		return NULL;
+		return (NULL);
 
 	path = strtok(env, ":");
 
@@ -40,14 +40,14 @@ char *get_full_path(char *command)
 		if (!cmd)
 		{
 			free(env);
-			return NULL;
+			return (NULL);
 		}
 
 		snprintf(cmd, strlen(path) + strlen(command) + 2, "%s/%s", path, command);
 		if (stat(cmd, &buffer) == 0)
 		{
 			free(env);
-			return cmd;
+			return (cmd);
 		}
 
 		free(cmd);
@@ -55,5 +55,5 @@ char *get_full_path(char *command)
 	}
 
 	free(env);
-	return NULL;
+	return (NULL);
 }
