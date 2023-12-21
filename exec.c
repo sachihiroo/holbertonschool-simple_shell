@@ -1,5 +1,13 @@
 #include "main.h"
 
+/**
+ * _exec - a function that executes a command
+ * @cmd: the command.
+ * @argv: the program's arguments.
+ * @idx: the index of the command in the input.
+ * Return: WEXITSTATUS(stat).
+ */
+
 int _exec(char **cmd, char **argv, int idx)
 
 {
