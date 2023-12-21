@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * main - Main function of the Simple Shell program
+ * @argv: the program's arguments.
+ * @ac: argument count.
+ * Return: stat.
+ */
+
 int main(int ac, char **argv)
 {
 	char **cmd = NULL;
