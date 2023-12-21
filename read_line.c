@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * read_line - a function that reads a line of input from the user.
+ * Return: line.
+ */
+
 char *read_line(void)
 {
 	char *line = NULL;
