@@ -8,17 +8,24 @@ char *get_path(char *command)
 {
 	char *env, *path, *cmd;
 	struct stat buffer;
+	int i;
+	
 	/* IF COMMAND WITH PATH EXEMPL(/bin/ls)*/
 
-	if (stat(command, &buffer) == 0)
+	for (i = 0; command[i]; i++)
 	{
-		return (command);
-	}
+		if (command[i] == '/')
+		{
+			if (stat(command, &buffer) == 0)
+				return strdup(command);
 
+			return (NULL);
+		}
+	}
 	/*	IF COMMAND WITHOUT PATH EXEMPL(ls)*/
 	env = env_func("PATH");
 	if (env == NULL)
-		return NULL;
+		return (NULL);
 
 	path = strtok(env, ":");
 
