@@ -23,5 +23,7 @@ int is_built_in(char **cmd);
 void handle_built_in(char **command, int *status);
 void hsh_exit(char **cmd, int *status);
 void hsh_env(char **cmd, int *status);
+int is_absolute_path(const char *command);
+int count_tokens(const char *line, const char *delim);
 
 #endif
