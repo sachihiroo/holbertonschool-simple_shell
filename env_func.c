@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * env_func - a function that searches for an environment variable
+ * and returns its corresponding value
+ * @pol: environment variable.
+ * Return: Null.
+ */
+
 char *env_func(char *pol)
 {
 	char *tmp, *value, *key, *env;
