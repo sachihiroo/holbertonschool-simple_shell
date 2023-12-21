@@ -5,6 +5,7 @@ int main(int ac, char **argv)
 	char **cmd = NULL;
 	char *line = NULL;
 	int stat = 0;
+	int idx;
 	(void)ac;
 
 	while (1)
@@ -18,7 +19,7 @@ int main(int ac, char **argv)
 			}
 			return (stat);
 		}
-
+		idx++;
 		cmd = tokenizer(line);
 
 		if (!cmd)
@@ -28,6 +29,6 @@ int main(int ac, char **argv)
 			handle_built_in(cmd, &stat);
 		}
 		else
-			stat = _exec(cmd, argv);
+			stat = _exec(cmd, argv, idx);
 	}
 }
