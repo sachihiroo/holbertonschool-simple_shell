@@ -1,6 +1,6 @@
 #include "main.h"
 
-int _exec(char **cmd, char **argv)
+int _exec(char **cmd, char **argv, int idx)
 
 {
 	char *full_cmd;
@@ -8,12 +8,18 @@ int _exec(char **cmd, char **argv)
 	int stat;
 
 	full_cmd = get_path(cmd[0]);
+	if (!full_cmd)
+	{
+		fprintf(stderr, "%s: %d: %s: not found\n", argv[0], idx, cmd[0]);
+		_free(cmd);
+		return (127);
+	}
 	child = fork();
 	if (child == 0)
 	{
 		if (execve(full_cmd, cmd, environ) == -1)
 		{
-			perror(argv[0]);
+			free(full_cmd);
 			_free(cmd);
 		}
 	}
