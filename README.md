@@ -65,6 +65,10 @@ This repository is a Holberton School project. Simple shell is a UNIX command in
 - `wait4` (man 2 wait4)
 - `write` (man 2 write)
 
+## Flowchart
+
+![Alt text](flowchart-1.PNG)
+
 ## Getting Started
 
 1. Open your terminal.
