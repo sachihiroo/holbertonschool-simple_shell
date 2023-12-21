@@ -1,9 +1,36 @@
 #include "main.h"
 /**
- * tokenizer - a function that that tokenizes a given string
- * into an array of strings based on specified delimiters.
- * @line: a string.
- * Return: cmd.
+ * count_tokens - Counts the number of tokens in a string.
+ * @line: The input string.
+ * @delim: The delimiters to use for tokenization.
+ * Return: The number of tokens.
+ */
+int count_tokens(const char *line, const char *delim)
+{
+	char *tmp;
+	char *token;
+	int count = 0;
+
+	if (line == NULL)
+		return (0);
+
+	tmp = strdup(line);
+	token = strtok(tmp, delim);
+
+	while (token)
+	{
+		count++;
+		token = strtok(NULL, delim);
+	}
+
+	free(tmp);
+	return (count);
+}
+
+/**
+ * tokenizer - Tokenizes a given string into an array of strings.
+ * @line: The input string.
+ * Return: An array of strings.
  */
 char **tokenizer(char *line)
 {
@@ -16,22 +43,7 @@ char **tokenizer(char *line)
 	if (line == NULL)
 		return (NULL);
 
-	tmp = strdup(line);
-	token = strtok(tmp, delim);
-
-	if (token == NULL)
-	{
-		free(line), line = NULL;
-		free(tmp), tmp = NULL;
-		return (NULL);
-	}
-
-	while (token)
-	{
-		i++;
-		token = strtok(NULL, delim);
-	}
-	free(tmp), tmp = NULL;
+	i = count_tokens(line, delim);
 
 	cmd = malloc(sizeof(char *) * (i + 1));
 	if (cmd == NULL)
@@ -40,14 +52,18 @@ char **tokenizer(char *line)
 		return (NULL);
 	}
 
-	token = strtok(line, delim);
+	tmp = strdup(line);
+	token = strtok(tmp, delim);
+
 	while (token)
 	{
 		cmd[j] = strdup(token);
 		token = strtok(NULL, delim);
 		j++;
 	}
-	free(line), line = NULL;
+
+	free(tmp);
+	free(line);
 	cmd[j] = NULL;
 	return (cmd);
 }
