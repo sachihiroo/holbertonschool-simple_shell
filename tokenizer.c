@@ -1,8 +1,9 @@
 #include "main.h"
 /**
- *
- *
- *
+ * tokenizer - a function that that tokenizes a given string
+ * into an array of strings based on specified delimiters.
+ * @line: a string.
+ * Return: cmd.
  */
 char **tokenizer(char *line)
 {
