@@ -67,7 +67,7 @@ This repository is a Holberton School project. Simple shell is a UNIX command in
 
 ## Flowchart
 
-![Alt text](flowchart-1.PNG)
+![Alt text](flowchart.PNG)
 
 ## Getting Started
 
@@ -94,7 +94,6 @@ This repository is a Holberton School project. Simple shell is a UNIX command in
    ```
 
 6. The shell will display a prompt ($) where you can enter commands. Type `exit` to exit the shell.
-
 
 
 
