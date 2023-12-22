@@ -67,12 +67,13 @@ This repository is a Holberton School project. Simple shell is a UNIX command in
 
 ## Flowchart
 
-![Alt text](flowchart.PNG)
+![flowchart](https://github.com/sachihiroo/holbertonschool-simple_shell/assets/146719992/e1e125b5-6480-4db0-89dc-33b8e978f372)
 
 ## Getting Started
 
 1. Open your terminal.
 2. Clone this repository:
+
 
 ```bash
     git clone https://github.com/sachihiroo/holbertonschool-simple_shell
